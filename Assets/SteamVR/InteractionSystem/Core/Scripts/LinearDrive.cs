@@ -105,10 +105,6 @@ namespace Valve.VR.InteractionSystem
 		{
 			prevMapping = linearMapping.value;
 			linearMapping.value = Mathf.Clamp01( initialMappingOffset + CalculateLinearMapping( tr ) );
-			Debug.Log (prevMapping);
-			Debug.Log ('x');
-			Debug.Log (prevMapping);
-			Debug.Log ('\n');
 
 			mappingChangeSamples[sampleCount % mappingChangeSamples.Length] = ( 1.0f / Time.deltaTime ) * ( linearMapping.value - prevMapping );
 			sampleCount++;
