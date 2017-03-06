@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour {
 	const float DOOR_WIDTH = 0.2f;
-	const float DOOR_HEIGHT = 0.8f;
+	const float DOOR_HEIGHT = 0.85f;
 
 	public void config(float doorPos) {
 		if (doorPos <= 0) {

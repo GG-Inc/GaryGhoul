@@ -15,8 +15,8 @@ public class Room : MonoBehaviour
 		new Vector3 (-2.5f, 0f, -2.5f),
 		new Vector3 (2.5f, 0f, -2.5f)
 	};
-
-	private Vector3 TWO_D_SCALE = new Vector3 (0.5f, 0, 0.25f);
+	const float HEIGHT = 2.5f;
+	private Vector3 TWO_D_SCALE = new Vector3 (0.5f, 0, HEIGHT/10f );
 
 	enum Direction
 	{
@@ -57,11 +57,14 @@ public class Room : MonoBehaviour
 		floor.transform.SetParent (transform, false);
 		floor.transform.localScale = Vector3.one * 0.5f;
 
+		Game
+		floor.AddComponent<Valve.VR.InteractionSystem.TeleportArea> ();
+
 		GameObject ceiling = GameObject.CreatePrimitive (PrimitiveType.Plane);
 		ceiling.name = "Ceiling";
 		ceiling.transform.SetParent (transform, false);
 		ceiling.transform.localScale = (Vector3.one * 0.5f) - Vector3.up;
-		ceiling.transform.localPosition = Vector3.up * 2.5f;
+		ceiling.transform.localPosition = Vector3.up * HEIGHT;
 		ceiling.GetComponent<Renderer> ().material = Utils.loadResource<Material> ("Materials/Ceiling");
 
 		Light light = new GameObject("Light").AddComponent<Light> ();
