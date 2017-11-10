@@ -23,6 +23,8 @@ public class House : MonoBehaviour {
 				room.transform.localPosition = new Vector3 (x, 0, y) * 5;
 				room.config (doors [x, y+1, 0], doors [x, y, 1],doors [x, y, 0], doors [x+1, y, 1]);
 			}
+
+		new GameObject ("Ghost").AddComponent<Ghost> ();
 	}
 	
 	// Update is called once per frame

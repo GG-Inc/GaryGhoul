@@ -57,7 +57,7 @@ public class Room : MonoBehaviour
 		floor.transform.SetParent (transform, false);
 		floor.transform.localScale = Vector3.one * 0.5f;
 
-		Game
+
 		floor.AddComponent<Valve.VR.InteractionSystem.TeleportArea> ();
 
 		GameObject ceiling = GameObject.CreatePrimitive (PrimitiveType.Plane);
